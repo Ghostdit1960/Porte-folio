@@ -3,672 +3,266 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gilles Ditengou — Technicien Support IT</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Gilles Ditengou — Technicien IT</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-
-  :root {
-    --bg:        #f5f4f1;
-    --white:     #ffffff;
-    --border:    #e8e4dd;
-    --text:      #2c2c2c;
-    --text-mid:  #6b6b6b;
-    --text-light:#9a9a9a;
-    --accent:    #2a4d7f;
-    --accent-lt: #e8eef6;
-    --tag-bg:    #f0ede8;
-    --serif:     'DM Serif Display', Georgia, serif;
-    --sans:      'DM Sans', sans-serif;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--sans);
-    font-weight: 400;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ── NAV ─────────────────────────────────────────── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: rgba(245,244,241,0.92);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .nav-inner {
-    max-width: 1040px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .nav-logo {
-    font-family: var(--serif);
-    font-size: 1.05rem;
-    color: var(--text);
-    letter-spacing: 0.01em;
-  }
-
-  nav ul {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
-
-  nav a {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--text-mid);
-    text-decoration: none;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    transition: color 0.2s;
-  }
-  nav a:hover { color: var(--accent); }
-
-  /* ── LAYOUT ──────────────────────────────────────── */
-  .container {
-    max-width: 1040px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-
-  section {
-    padding: 5rem 0;
-  }
-
-  /* ── HERO ─────────────────────────────────────────── */
-  #hero {
-    padding-top: 120px;
-    padding-bottom: 5rem;
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .hero-inner {
-    max-width: 1040px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 3rem;
-    align-items: center;
-  }
-
-  .hero-eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: 0.78rem;
-    font-weight: 500;
-    color: var(--accent);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 1.2rem;
-    opacity: 0;
-    animation: rise 0.5s ease 0.1s forwards;
-  }
-
-  .hero-eyebrow::before {
-    content: '';
-    width: 20px; height: 1px;
-    background: var(--accent);
-    display: inline-block;
-  }
-
-  .hero-name {
-    font-family: var(--serif);
-    font-size: clamp(2.6rem, 5vw, 4rem);
-    line-height: 1.1;
-    color: var(--text);
-    letter-spacing: -0.01em;
-    margin-bottom: 1rem;
-    opacity: 0;
-    animation: rise 0.5s ease 0.2s forwards;
-  }
-
-  .hero-sub {
-    font-size: 1rem;
-    color: var(--text-mid);
-    font-weight: 300;
-    max-width: 480px;
-    line-height: 1.8;
-    margin-bottom: 2rem;
-    opacity: 0;
-    animation: rise 0.5s ease 0.3s forwards;
-  }
-
-  .hero-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    opacity: 0;
-    animation: rise 0.5s ease 0.4s forwards;
-  }
-
-  .chip {
-    font-size: 0.75rem;
-    font-weight: 500;
-    padding: 0.3rem 0.85rem;
-    border-radius: 100px;
-    background: var(--tag-bg);
-    color: var(--text-mid);
-    border: 1px solid var(--border);
-  }
-
-  .chip.blue {
-    background: var(--accent-lt);
-    color: var(--accent);
-    border-color: #c3d4e8;
-  }
-
-  .hero-aside {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    opacity: 0;
-    animation: rise 0.5s ease 0.5s forwards;
-  }
-
-  .stat-card {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.2rem 1.6rem;
-    min-width: 160px;
-    text-align: center;
-  }
-
-  .stat-num {
-    font-family: var(--serif);
-    font-size: 2rem;
-    color: var(--accent);
-    line-height: 1;
-  }
-
-  .stat-label {
-    font-size: 0.73rem;
-    color: var(--text-mid);
-    font-weight: 500;
-    margin-top: 0.3rem;
-    letter-spacing: 0.02em;
-  }
-
-  /* ── SECTION HEADERS ─────────────────────────────── */
-  .sec-header {
-    margin-bottom: 2.5rem;
-  }
-
-  .sec-eyebrow {
-    font-size: 0.72rem;
-    font-weight: 600;
-    color: var(--accent);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-  }
-
-  .sec-title {
-    font-family: var(--serif);
-    font-size: 1.9rem;
-    color: var(--text);
-    font-weight: 400;
-  }
-
-  /* ── PROFIL ──────────────────────────────────────── */
-  #profil { background: var(--bg); }
-
-  .profil-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-  }
-
-  .profil-cell {
-    background: var(--white);
-    padding: 2rem 2.2rem;
-    transition: background 0.2s;
-  }
-
-  .profil-cell:hover { background: #fdfcfb; }
-
-  .profil-cell-icon {
-    width: 36px; height: 36px;
-    background: var(--accent-lt);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .profil-cell h3 {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 0.5rem;
-  }
-
-  .profil-cell p {
-    font-size: 0.85rem;
-    color: var(--text-mid);
-    line-height: 1.75;
-    font-weight: 300;
-  }
-
-  /* ── EXPÉRIENCES ─────────────────────────────────── */
-  #experience { background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-
-  .timeline {
-    position: relative;
-    padding-left: 1.5rem;
-  }
-
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 6px; bottom: 0;
-    width: 1px;
-    background: var(--border);
-  }
-
-  .exp-item {
-    position: relative;
-    padding-bottom: 2.8rem;
-    padding-left: 2rem;
-    opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-
-  .exp-item.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .exp-item::before {
-    content: '';
-    position: absolute;
-    left: -4.5px; top: 6px;
-    width: 10px; height: 10px;
-    border-radius: 50%;
-    background: var(--white);
-    border: 2px solid var(--accent);
-  }
-
-  .exp-meta {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    margin-bottom: 0.4rem;
-    flex-wrap: wrap;
-  }
-
-  .exp-date {
-    font-size: 0.73rem;
-    font-weight: 600;
-    color: var(--accent);
-    letter-spacing: 0.06em;
-    background: var(--accent-lt);
-    padding: 0.2rem 0.7rem;
-    border-radius: 100px;
-  }
-
-  .exp-company {
-    font-size: 0.78rem;
-    color: var(--text-light);
-    font-weight: 400;
-  }
-
-  .exp-title {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 0.9rem;
-  }
-
-  .exp-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.45rem;
-    margin-bottom: 1.1rem;
-  }
-
-  .exp-list li {
-    font-size: 0.86rem;
-    color: var(--text-mid);
-    padding-left: 1.1rem;
-    position: relative;
-    line-height: 1.65;
-    font-weight: 300;
-  }
-
-  .exp-list li::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0.55em;
-    width: 4px; height: 4px;
-    border-radius: 50%;
-    background: var(--accent);
-    opacity: 0.6;
-  }
-
-  .exp-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
-
-  .tag {
-    font-size: 0.7rem;
-    font-weight: 500;
-    padding: 0.2rem 0.65rem;
-    border-radius: 100px;
-    background: var(--tag-bg);
-    color: var(--text-mid);
-    border: 1px solid var(--border);
-  }
-
-  /* ── COMPÉTENCES ─────────────────────────────────── */
-  #competences { background: var(--bg); }
-
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-
-  .skill-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.6rem 1.7rem;
-    transition: box-shadow 0.2s, transform 0.2s;
-  }
-
-  .skill-card:hover {
-    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-    transform: translateY(-2px);
-  }
-
-  .skill-card-top {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    margin-bottom: 1rem;
-  }
-
-  .skill-icon {
-    width: 34px; height: 34px;
-    background: var(--accent-lt);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.95rem;
-    flex-shrink: 0;
-  }
-
-  .skill-card-title {
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--text);
-  }
-
-  .skill-items {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-  }
-
-  .skill-item {
-    font-size: 0.8rem;
-    color: var(--text-mid);
-    font-weight: 300;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .skill-item::before {
-    content: '';
-    width: 3px; height: 3px;
-    border-radius: 50%;
-    background: var(--border);
-    flex-shrink: 0;
-  }
-
-  .skill-item.key {
-    color: var(--text);
-    font-weight: 500;
-  }
-
-  .skill-item.key::before { background: var(--accent); }
-
-  /* ── HOMELAB ─────────────────────────────────────── */
-  #homelab { background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-
-  .homelab-inner {
-    display: grid;
-    grid-template-columns: 1fr 1.4fr;
-    gap: 4rem;
-    align-items: start;
-  }
-
-  .homelab-intro {
-    font-size: 0.9rem;
-    color: var(--text-mid);
-    line-height: 1.8;
-    font-weight: 300;
-    margin-bottom: 1.5rem;
-  }
-
-  .homelab-note {
-    font-size: 0.78rem;
-    color: var(--accent);
-    font-weight: 500;
-    padding: 0.7rem 1rem;
-    background: var(--accent-lt);
-    border-left: 2px solid var(--accent);
-    border-radius: 0 6px 6px 0;
-  }
-
-  .tech-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.8rem;
-  }
-
-  .tech-pill {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 0.9rem 0.7rem;
-    text-align: center;
-    transition: border-color 0.2s, background 0.2s;
-  }
-
-  .tech-pill:hover {
-    border-color: #c3d4e8;
-    background: var(--accent-lt);
-  }
-
-  .tech-pill-name {
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--text);
-    display: block;
-  }
-
-  .tech-pill-desc {
-    font-size: 0.68rem;
-    color: var(--text-light);
-    margin-top: 0.2rem;
-    display: block;
-  }
-
-  /* ── FORMATION ───────────────────────────────────── */
-  #formation { background: var(--bg); }
-
-  .formation-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-
-  .formation-item {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.3rem 1.6rem;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    gap: 1rem;
-    transition: box-shadow 0.2s;
-  }
-
-  .formation-item:hover {
-    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-  }
-
-  .formation-title {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 0.2rem;
-  }
-
-  .formation-school {
-    font-size: 0.78rem;
-    color: var(--text-mid);
-    font-weight: 300;
-  }
-
-  .formation-year {
-    font-size: 0.73rem;
-    font-weight: 600;
-    color: var(--accent);
-    white-space: nowrap;
-    background: var(--accent-lt);
-    padding: 0.25rem 0.75rem;
-    border-radius: 100px;
-  }
-
-  /* ── CONTACT ─────────────────────────────────────── */
-  #contact {
-    background: var(--text);
-    border-top: none;
-  }
-
-  #contact .sec-eyebrow { color: #8ba8cc; }
-  #contact .sec-title   { color: var(--white); }
-
-  .contact-sub {
-    font-size: 0.9rem;
-    color: #9aa3ad;
-    max-width: 440px;
-    font-weight: 300;
-    margin-bottom: 2.5rem;
-    line-height: 1.8;
-  }
-
-  .contact-links {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .contact-link {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: #c8d4df;
-    text-decoration: none;
-    border: 1px solid #3d4a55;
-    padding: 0.75rem 1.4rem;
-    border-radius: 8px;
-    transition: all 0.2s;
-    letter-spacing: 0.02em;
-  }
-
-  .contact-link:hover {
-    border-color: #8ba8cc;
-    color: var(--white);
-    background: rgba(139,168,204,0.1);
-  }
-
-  /* ── FOOTER ──────────────────────────────────────── */
-  footer {
-    background: #1e2428;
-    padding: 1.5rem 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  footer p {
-    font-size: 0.75rem;
-    color: #4a5560;
-    letter-spacing: 0.04em;
-  }
-
-  /* ── DIVIDER ─────────────────────────────────────── */
-  .divider {
-    height: 1px;
-    background: var(--border);
-  }
-
-  /* ── ANIMATIONS ──────────────────────────────────── */
-  @keyframes rise {
-    from { opacity: 0; transform: translateY(14px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ── RESPONSIVE ──────────────────────────────────── */
-  @media (max-width: 768px) {
-    .hero-inner       { grid-template-columns: 1fr; }
-    .hero-aside       { flex-direction: row; }
-    .profil-grid      { grid-template-columns: 1fr; }
-    .skills-grid      { grid-template-columns: 1fr 1fr; }
-    .homelab-inner    { grid-template-columns: 1fr; gap: 2rem; }
-    .tech-grid        { grid-template-columns: repeat(2, 1fr); }
-    nav ul            { display: none; }
-  }
-
+:root {
+  --cream:   #faf8f5;
+  --white:   #ffffff;
+  --stone:   #f0ece6;
+  --border:  #e5e0d8;
+  --ink:     #1c1c1e;
+  --ink-mid: #5c5c5f;
+  --ink-lt:  #9c9c9f;
+  --blue:    #1a3a5c;
+  --blue-lt: #eaf0f7;
+  --blue-md: #c5d6e8;
+  --orange:  #c4622d;
+  --orange-lt:#fdf0ea;
+  --serif:   'Playfair Display', Georgia, serif;
+  --sans:    'Outfit', sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--cream);color:var(--ink);
+  font-family:var(--sans);font-weight:400;
+  line-height:1.65;-webkit-font-smoothing:antialiased;
+}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(250,248,245,0.93);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:1020px;margin:0 auto;padding:0 2rem;
+  height:58px;display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{font-family:var(--serif);font-size:1rem;color:var(--ink);}
+nav ul{display:flex;gap:2rem;list-style:none;}
+nav a{
+  font-size:.75rem;font-weight:500;color:var(--ink-mid);
+  text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:color .2s;
+}
+nav a:hover{color:var(--blue);}
+
+/* WRAP */
+.wrap{max-width:1020px;margin:0 auto;padding:0 2rem;}
+
+/* HERO */
+#hero{padding:120px 0 70px;background:var(--white);border-bottom:1px solid var(--border);}
+.hero-grid{display:grid;grid-template-columns:1fr 300px;gap:4rem;align-items:center;}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.72rem;font-weight:600;color:var(--blue);
+  letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.4rem;
+  opacity:0;animation:up .5s ease .05s forwards;
+}
+.hero-tag::before{content:'';width:18px;height:1px;background:var(--blue);}
+h1{
+  font-family:var(--serif);font-size:clamp(2.6rem,5vw,3.8rem);
+  line-height:1.1;color:var(--ink);letter-spacing:-.01em;
+  margin-bottom:1.2rem;opacity:0;animation:up .5s ease .1s forwards;
+}
+.hero-desc{
+  font-size:.95rem;color:var(--ink-mid);font-weight:300;
+  line-height:1.85;max-width:480px;margin-bottom:2rem;
+  opacity:0;animation:up .5s ease .2s forwards;
+}
+.hero-chips{display:flex;flex-wrap:wrap;gap:.45rem;opacity:0;animation:up .5s ease .3s forwards;}
+.chip{
+  font-size:.71rem;font-weight:500;padding:.26rem .78rem;border-radius:100px;
+  border:1px solid var(--border);background:var(--stone);color:var(--ink-mid);
+}
+.chip.b{background:var(--blue-lt);border-color:var(--blue-md);color:var(--blue);}
+.chip.o{background:var(--orange-lt);border-color:#f0c8b0;color:var(--orange);}
+
+.hero-stats{display:flex;flex-direction:column;gap:.9rem;opacity:0;animation:up .5s ease .35s forwards;}
+.stat{
+  background:var(--stone);border:1px solid var(--border);
+  border-radius:12px;padding:1.25rem 1.4rem;text-align:center;
+}
+.stat-n{font-family:var(--serif);font-size:2rem;color:var(--blue);line-height:1;}
+.stat-l{font-size:.68rem;font-weight:500;color:var(--ink-mid);margin-top:.3rem;letter-spacing:.03em;}
+
+/* SECTION */
+section{padding:5rem 0;}
+.sec-ey{font-size:.7rem;font-weight:600;color:var(--blue);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.5rem;}
+.sec-ti{font-family:var(--serif);font-size:1.9rem;color:var(--ink);font-weight:400;margin-bottom:2.5rem;}
+
+/* HARDWARE */
+#hardware{background:var(--ink);position:relative;overflow:hidden;}
+#hardware::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 55% 50% at 8% 65%,rgba(26,58,92,.55) 0%,transparent 70%),
+    radial-gradient(ellipse 35% 35% at 92% 15%,rgba(196,98,45,.14) 0%,transparent 60%);
+}
+#hardware .sec-ey{color:#6fa3d0;}
+#hardware .sec-ti{color:#fff;}
+.hw-intro{font-size:.91rem;color:rgba(255,255,255,.52);font-weight:300;line-height:1.85;max-width:540px;margin-bottom:3rem;}
+
+/* Profils */
+.hw-profils{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:2.5rem;}
+.hw-profil{
+  border-radius:14px;padding:1.8rem;
+  border:1px solid rgba(255,255,255,.1);
+  background:rgba(255,255,255,.04);transition:background .25s;
+}
+.hw-profil:hover{background:rgba(255,255,255,.07);}
+.hw-ph{
+  display:flex;align-items:center;gap:.8rem;
+  margin-bottom:1.2rem;padding-bottom:1rem;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.hw-ico{
+  width:38px;height:38px;border-radius:9px;
+  display:flex;align-items:center;justify-content:center;font-size:1rem;
+}
+.ico-b{background:rgba(111,163,208,.18);border:1px solid rgba(111,163,208,.3);}
+.ico-o{background:rgba(196,98,45,.2);border:1px solid rgba(196,98,45,.3);}
+.hw-pn{font-size:.9rem;font-weight:600;color:#fff;}
+.hw-pr{font-size:.69rem;color:rgba(255,255,255,.38);margin-top:.1rem;}
+.hw-ul{list-style:none;display:flex;flex-direction:column;gap:.45rem;}
+.hw-ul li{font-size:.8rem;color:rgba(255,255,255,.62);font-weight:300;display:flex;gap:.55rem;line-height:1.5;}
+.hw-ul li::before{content:'';width:3px;height:3px;border-radius:50%;flex-shrink:0;margin-top:.52em;}
+.hw-ul.b li::before{background:#6fa3d0;}
+.hw-ul.o li::before{background:#e08050;}
+.hw-ul li strong{color:#fff;font-weight:600;}
+
+/* Cards */
+.hw-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem;}
+.hw-card{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
+  border-radius:10px;padding:1.3rem;transition:background .2s,transform .2s;
+}
+.hw-card:hover{background:rgba(255,255,255,.09);transform:translateY(-2px);}
+.hw-card-ico{font-size:1.1rem;margin-bottom:.7rem;}
+.hw-card-title{font-size:.82rem;font-weight:600;color:#fff;margin-bottom:.45rem;line-height:1.3;}
+.hw-card-text{font-size:.75rem;color:rgba(255,255,255,.48);font-weight:300;line-height:1.65;}
+
+/* Env strip */
+.hw-env{
+  display:flex;align-items:center;gap:1rem;flex-wrap:wrap;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+  border-radius:10px;padding:1.1rem 1.4rem;
+}
+.hw-env-label{font-size:.67rem;font-weight:600;color:#6fa3d0;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;}
+.hw-pills{display:flex;flex-wrap:wrap;gap:.4rem;}
+.hw-pill{
+  font-size:.66rem;font-weight:500;padding:.18rem .58rem;border-radius:100px;
+  background:rgba(255,255,255,.07);color:rgba(255,255,255,.52);border:1px solid rgba(255,255,255,.1);
+}
+
+/* SUPPORT */
+#support{background:var(--white);border-top:1px solid var(--border);}
+.support-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.sup-card{
+  background:var(--cream);border:1px solid var(--border);
+  border-radius:12px;padding:1.6rem;transition:box-shadow .2s,transform .2s;
+}
+.sup-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.06);transform:translateY(-2px);}
+.sup-ico{
+  width:36px;height:36px;background:var(--blue-lt);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;font-size:.95rem;margin-bottom:1rem;
+}
+.sup-title{font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:.45rem;}
+.sup-text{font-size:.8rem;color:var(--ink-mid);font-weight:300;line-height:1.72;}
+
+/* TIMELINE */
+#experience{background:var(--cream);}
+.tl{position:relative;padding-left:1.5rem;}
+.tl::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:1px;background:var(--border);}
+.tl-item{
+  position:relative;padding:0 0 2.8rem 2rem;
+  opacity:0;transform:translateY(12px);transition:opacity .45s ease,transform .45s ease;
+}
+.tl-item.vis{opacity:1;transform:translateY(0);}
+.tl-item::before{
+  content:'';position:absolute;left:-4.5px;top:7px;
+  width:10px;height:10px;border-radius:50%;
+  background:var(--white);border:2px solid var(--blue);
+}
+.tl-meta{display:flex;align-items:center;gap:.7rem;margin-bottom:.35rem;flex-wrap:wrap;}
+.tl-date{
+  font-size:.7rem;font-weight:600;color:var(--blue);
+  background:var(--blue-lt);border-radius:100px;padding:.18rem .65rem;letter-spacing:.05em;
+}
+.tl-co{font-size:.75rem;color:var(--ink-lt);}
+.tl-role{font-size:1.02rem;font-weight:600;color:var(--ink);margin-bottom:.8rem;}
+.tl-ul{list-style:none;display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem;}
+.tl-ul li{
+  font-size:.83rem;color:var(--ink-mid);font-weight:300;
+  padding-left:1rem;position:relative;line-height:1.65;
+}
+.tl-ul li::before{
+  content:'';position:absolute;left:0;top:.6em;
+  width:3px;height:3px;border-radius:50%;background:var(--blue);opacity:.5;
+}
+.tl-tags{display:flex;flex-wrap:wrap;gap:.35rem;}
+.tl-tag{
+  font-size:.67rem;font-weight:500;padding:.18rem .6rem;border-radius:100px;
+  background:var(--stone);color:var(--ink-mid);border:1px solid var(--border);
+}
+
+/* FORMATION */
+#formation{background:var(--white);border-top:1px solid var(--border);}
+.fo-list{display:flex;flex-direction:column;gap:.75rem;}
+.fo-item{
+  background:var(--cream);border:1px solid var(--border);border-radius:10px;
+  padding:1.2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;
+  gap:1rem;transition:box-shadow .2s;
+}
+.fo-item:hover{box-shadow:0 2px 12px rgba(0,0,0,.05);}
+.fo-name{font-size:.88rem;font-weight:600;color:var(--ink);}
+.fo-school{font-size:.74rem;color:var(--ink-mid);font-weight:300;margin-top:.15rem;}
+.fo-yr{font-size:.7rem;font-weight:600;padding:.22rem .7rem;border-radius:100px;white-space:nowrap;}
+.fo-yr.now{background:#e8f4ec;color:#2d7a4f;}
+.fo-yr.done{background:var(--blue-lt);color:var(--blue);}
+
+/* CONTACT */
+#contact{background:var(--ink);padding:5rem 0;}
+#contact .sec-ey{color:#6fa3d0;}
+#contact .sec-ti{color:#fff;}
+.ct-sub{
+  font-size:.9rem;color:rgba(255,255,255,.42);font-weight:300;
+  line-height:1.85;max-width:420px;margin-bottom:2.5rem;
+}
+.ct-links{display:flex;gap:1rem;flex-wrap:wrap;}
+.ct-link{
+  display:flex;align-items:center;gap:.6rem;
+  font-size:.8rem;font-weight:500;color:rgba(255,255,255,.68);
+  text-decoration:none;border:1px solid rgba(255,255,255,.14);
+  padding:.7rem 1.3rem;border-radius:8px;transition:all .2s;
+}
+.ct-link:hover{border-color:#6fa3d0;color:#fff;background:rgba(111,163,208,.1);}
+
+footer{background:#141416;padding:1.4rem 2rem;display:flex;justify-content:center;}
+footer p{font-size:.7rem;color:rgba(255,255,255,.18);letter-spacing:.04em;}
+
+@keyframes up{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+
+@media(max-width:768px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hw-profils{grid-template-columns:1fr;}
+  .hw-cards{grid-template-columns:1fr 1fr;}
+  .support-grid{grid-template-columns:1fr;}
+  nav ul{display:none;}
+}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <span class="nav-logo">Gilles Ditengou</span>
     <ul>
-      <li><a href="#profil">Profil</a></li>
-      <li><a href="#experience">Expérience</a></li>
-      <li><a href="#competences">Compétences</a></li>
-      <li><a href="#formation">Formation</a></li>
+      <li><a href="#hardware">Hardware</a></li>
+      <li><a href="#support">Support</a></li>
+      <li><a href="#experience">Parcours</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -676,363 +270,192 @@
 
 <!-- HERO -->
 <div id="hero">
-  <div class="hero-inner">
-    <div>
-      <div class="hero-eyebrow">Disponible · Bordeaux</div>
-      <h1 class="hero-name">Technicien<br>Support IT</h1>
-      <p class="hero-sub">
-        2 ans et demi d'expérience opérationnelle en support utilisateurs, déploiement de postes et gestion de parc informatique. À l'aise dans les environnements Windows 11, Microsoft 365 et GLPI. Titre Professionnel TSSR en cours de préparation.
-      </p>
-      <div class="hero-chips">
-        <span class="chip blue">Support N1 / N2</span>
-        <span class="chip blue">Windows 11</span>
-        <span class="chip blue">Microsoft 365</span>
-        <span class="chip blue">GLPI</span>
-        <span class="chip">Anglais opérationnel</span>
-        <span class="chip">Autonomie & équipe</span>
-        <span class="chip">TP TSSR en cours</span>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-tag">Candidature · Asobo Studio</div>
+        <h1>Technicien<br>Support IT</h1>
+        <p class="hero-desc">
+          Spécialiste de la maintenance hardware et du support utilisateurs, avec 2 ans et demi d'expérience opérationnelle. Expert en architecture de postes haute performance, diagnostic de pannes complexes et upgrade de composants.
+        </p>
+        <div class="hero-chips">
+          <span class="chip o">Hardware / Composants</span>
+          <span class="chip o">Workstations HPC</span>
+          <span class="chip o">Upgrade RAM · SSD · GPU</span>
+          <span class="chip b">Windows 11</span>
+          <span class="chip b">Support N1 / N2</span>
+          <span class="chip b">GLPI</span>
+          <span class="chip b">Microsoft 365</span>
+          <span class="chip">TP TSSR en cours</span>
+        </div>
       </div>
-    </div>
-    <div class="hero-aside">
-      <div class="stat-card">
-        <div class="stat-num">2,5</div>
-        <div class="stat-label">Ans d'expérience IT</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">N1/N2</div>
-        <div class="stat-label">Niveau de support</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">8+</div>
-        <div class="stat-label">Outils maîtrisés</div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-n">2,5</div>
+          <div class="stat-l">Ans d'expérience IT</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">~50</div>
+          <div class="stat-l">Machines / semaine</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">N2</div>
+          <div class="stat-l">Niveau de support max</div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- PROFIL -->
-<section id="profil">
-  <div class="container">
-    <div class="sec-header">
-      <div class="sec-eyebrow">À propos</div>
-      <h2 class="sec-title">Profil professionnel</h2>
-    </div>
-    <div class="profil-grid">
-      <div class="profil-cell">
-        <div class="profil-cell-icon">🖥️</div>
-        <h3>Support & Helpdesk</h3>
-        <p>Expérience solide en support utilisateurs N1/N2, diagnostic de pannes matérielles et logicielles, et accompagnement de profils variés. À l'aise aussi bien en présentiel qu'à distance via TeamViewer et RDP.</p>
-      </div>
-      <div class="profil-cell">
-        <div class="profil-cell-icon">⚙️</div>
-        <h3>Déploiement & Gestion de parc</h3>
-        <p>Expérience complète sur le cycle de vie d'un poste : réception et contrôle matériel, préparation, configuration Windows 11, intégration réseau, suivi d'inventaire et gestion des niveaux de stock via GLPI.</p>
-      </div>
-      <div class="profil-cell">
-        <div class="profil-cell-icon">📋</div>
-        <h3>Documentation & Rigueur</h3>
-        <p>Habitué à rédiger des procédures d'intervention, guides utilisateurs et bases de connaissances. Respect des SLA et reporting régulier via les outils de ticketing.</p>
-      </div>
-      <div class="profil-cell">
-        <div class="profil-cell-icon">🌐</div>
-        <h3>Infrastructure & Réseaux</h3>
-        <p>Notions solides en réseaux (TCP/IP, DNS, DHCP, VLANs) et participation à des missions d'infrastructure. Homelab personnel avec Proxmox, Docker et Zabbix pour une montée en compétences continue.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EXPÉRIENCES -->
-<section id="experience">
-  <div class="container">
-    <div class="sec-header">
-      <div class="sec-eyebrow">Parcours</div>
-      <h2 class="sec-title">Expériences professionnelles</h2>
-    </div>
-    <div class="timeline">
-
-      <div class="exp-item">
-        <div class="exp-meta">
-          <span class="exp-date">Mai 2023 — Jan 2026</span>
-          <span class="exp-company">Le DEFI · Lormont (33)</span>
-        </div>
-        <div class="exp-title">Technicien Informatique</div>
-        <ul class="exp-list">
-          <li>Déploiement des postes utilisateurs : réception, contrôle et préparation du matériel, installation et configuration sous Windows 10/11.</li>
-          <li>Maintenance du parc informatique hardware et software : mise à jour d'applications, remplacement de composants, upgrade de PC.</li>
-          <li>Support utilisateurs N1/N2 en présentiel et à distance (TeamViewer, RDP) : accueil, accompagnement, gestion des incidents et demandes.</li>
-          <li>Suivi du parc, gestion des niveaux de stock et détection des besoins via GLPI ; supervision réseau avec Zabbix.</li>
-          <li>Rédaction et amélioration de la base documentaire : procédures d'intervention, guides et notes de configuration.</li>
-          <li>Participation aux missions réseau : brassage, paramétrage d'équipements (switchs, NAS) ; administration Microsoft 365.</li>
-        </ul>
-        <div class="exp-tags">
-          <span class="tag">Windows 11</span>
-          <span class="tag">Microsoft 365</span>
-          <span class="tag">GLPI</span>
-          <span class="tag">TeamViewer / RDP</span>
-          <span class="tag">Zabbix</span>
-          <span class="tag">Support N1/N2</span>
-          <span class="tag">Brassage réseau</span>
-        </div>
-      </div>
-
-      <div class="exp-item">
-        <div class="exp-meta">
-          <span class="exp-date">Juin 2021 — Sept 2024</span>
-          <span class="exp-company">BQ Conseils · Montpellier</span>
-        </div>
-        <div class="exp-title">Assistant Comptable</div>
-        <ul class="exp-list">
-          <li>Gestion administrative rigoureuse et traitement analytique des données financières.</li>
-          <li>Utilisation quotidienne des outils bureautiques et ERP — solide aisance avec les environnements numériques.</li>
-        </ul>
-        <div class="exp-tags">
-          <span class="tag">Suite Office</span>
-          <span class="tag">ERP</span>
-          <span class="tag">Rigueur</span>
-        </div>
-      </div>
-
-      <div class="exp-item">
-        <div class="exp-meta">
-          <span class="exp-date">Fév — Sept 2019</span>
-          <span class="exp-company">DUMAS Propreté · Bordeaux</span>
-        </div>
-        <div class="exp-title">Agent d'Entretien</div>
-        <ul class="exp-list">
-          <li>Respect strict des procédures d'intervention en milieu professionnel.</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- COMPÉTENCES -->
-<section id="competences">
-  <div class="container">
-    <div class="sec-header">
-      <div class="sec-eyebrow">Savoir-faire</div>
-      <h2 class="sec-title">Compétences techniques</h2>
-    </div>
-    <div class="skills-grid">
-
-      <div class="skill-card">
-        <div class="skill-card-top">
-          <div class="skill-icon">🖥️</div>
-          <div class="skill-card-title">Support Helpdesk</div>
-        </div>
-        <div class="skill-items">
-          <div class="skill-item key">Support N1 & N2</div>
-          <div class="skill-item key">Diagnostic panne matérielle / logicielle</div>
-          <div class="skill-item">Accueil & accompagnement utilisateurs</div>
-          <div class="skill-item">Gestion des incidents & demandes</div>
-          <div class="skill-item">TeamViewer · RDP</div>
-        </div>
-      </div>
-
-      <div class="skill-card">
-        <div class="skill-card-top">
-          <div class="skill-icon">⚙️</div>
-          <div class="skill-card-title">Systèmes Windows</div>
-        </div>
-        <div class="skill-items">
-          <div class="skill-item key">Windows 11 (maîtrise)</div>
-          <div class="skill-item key">Déploiement & préparation postes</div>
-          <div class="skill-item">Active Directory / Azure AD</div>
-          <div class="skill-item">Installation logiciels métiers</div>
-          <div class="skill-item">Upgrade & remplacement matériel</div>
-        </div>
-      </div>
-
-      <div class="skill-card">
-        <div class="skill-card-top">
-          <div class="skill-icon">📦</div>
-          <div class="skill-card-title">Microsoft 365</div>
-        </div>
-        <div class="skill-items">
-          <div class="skill-item key">Suite Office complète</div>
-          <div class="skill-item key">Administration M365</div>
-          <div class="skill-item">Exchange Online</div>
-          <div class="skill-item">Teams & SharePoint</div>
-          <div class="skill-item">Gestion comptes & licences</div>
-        </div>
-      </div>
-
-      <div class="skill-card">
-        <div class="skill-card-top">
-          <div class="skill-icon">🗂️</div>
-          <div class="skill-card-title">Gestion de parc — GLPI</div>
-        </div>
-        <div class="skill-items">
-          <div class="skill-item key">GLPI — Ticketing & inventaire</div>
-          <div class="skill-item key">Suivi des niveaux de stock</div>
-          <div class="skill-item">Détection des besoins matériels</div>
-          <div class="skill-item">Rapports d'intervention</div>
-          <div class="skill-item">Base de connaissances</div>
-        </div>
-      </div>
-
-      <div class="skill-card">
-        <div class="skill-card-top">
-          <div class="skill-icon">🌐</div>
-          <div class="skill-card-title">Réseaux</div>
-        </div>
-        <div class="skill-items">
-          <div class="skill-item key">TCP/IP · DNS · DHCP</div>
-          <div class="skill-item">LAN/WAN · Brassage réseau</div>
-          <div class="skill-item">Cisco (notions) · Aruba (notions)</div>
-          <div class="skill-item">Switchs · NAS · WLAN</div>
-          <div class="skill-item">Supervision Zabbix</div>
-        </div>
-      </div>
-
-      <div class="skill-card">
-        <div class="skill-card-top">
-          <div class="skill-icon">🔧</div>
-          <div class="skill-card-title">Infrastructure & Virtualisation</div>
-        </div>
-        <div class="skill-items">
-          <div class="skill-item key">Proxmox VE (homelab)</div>
-          <div class="skill-item">Docker & conteneurs</div>
-          <div class="skill-item">Linux — Ubuntu / Debian</div>
-          <div class="skill-item">Zabbix (monitoring)</div>
-          <div class="skill-item">Administration SSH</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- HOMELAB -->
-<section id="homelab">
-  <div class="container">
-    <div class="homelab-inner">
-      <div>
-        <div class="sec-header">
-          <div class="sec-eyebrow">Projet personnel</div>
-          <h2 class="sec-title">Infrastructure personnelle</h2>
-        </div>
-        <p class="homelab-intro">
-          En dehors de mes missions professionnelles, je maintiens un environnement de lab qui me permet d'expérimenter des configurations proches de la production, tester des scénarios de pannes et approfondir mes connaissances en continu.
-        </p>
-        <div class="homelab-note">
-          Ce lab m'a permis de déployer et d'utiliser GLPI de façon autonome — outil listé comme atout dans cette offre.
-        </div>
-      </div>
-      <div>
-        <div class="tech-grid">
-          <div class="tech-pill">
-            <span class="tech-pill-name">Proxmox</span>
-            <span class="tech-pill-desc">Virtualisation</span>
-          </div>
-          <div class="tech-pill">
-            <span class="tech-pill-name">GLPI</span>
-            <span class="tech-pill-desc">Parc & ticketing</span>
-          </div>
-          <div class="tech-pill">
-            <span class="tech-pill-name">Zabbix</span>
-            <span class="tech-pill-desc">Supervision</span>
-          </div>
-          <div class="tech-pill">
-            <span class="tech-pill-name">Docker</span>
-            <span class="tech-pill-desc">Conteneurs</span>
-          </div>
-          <div class="tech-pill">
-            <span class="tech-pill-name">Cisco IOS</span>
-            <span class="tech-pill-desc">Réseau / VLANs</span>
-          </div>
-          <div class="tech-pill">
-            <span class="tech-pill-name">Linux</span>
-            <span class="tech-pill-desc">Ubuntu / Debian</span>
-          </div>
-          <div class="tech-pill">
-            <span class="tech-pill-name">Azure AD</span>
-            <span class="tech-pill-desc">Identité</span>
-          </div>
-          <div class="tech-pill">
-            <span class="tech-pill-name">SSH / RDP</span>
-            <span class="tech-pill-desc">Admin distante</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FORMATION -->
-<section id="formation">
-  <div class="container">
-    <div class="sec-header">
-      <div class="sec-eyebrow">Diplômes</div>
-      <h2 class="sec-title">Formation</h2>
-    </div>
-    <div class="formation-list">
-      <div class="formation-item">
-        <div>
-          <div class="formation-title">Titre Professionnel Technicien Supérieur Systèmes & Réseaux</div>
-          <div class="formation-school">Studi — Formation en ligne</div>
-        </div>
-        <span class="formation-year" style="background:#e8f4ec;color:#2d7a4f;border:none;">En cours</span>
-      </div>
-      <div class="formation-item">
-        <div>
-          <div class="formation-title">BTS Comptabilité et Gestion</div>
-          <div class="formation-school">Esarc Evolution</div>
-        </div>
-        <span class="formation-year">2021</span>
-      </div>
-      <div class="formation-item">
-        <div>
-          <div class="formation-title">Bac Professionnel STG</div>
-          <div class="formation-school">Lycée Technique National — Gabon</div>
-        </div>
-        <span class="formation-year">2018</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <div class="sec-header">
-      <div class="sec-eyebrow">Me contacter</div>
-      <h2 class="sec-title">Disponible dès maintenant</h2>
-    </div>
-    <p class="contact-sub">
-      Motivé à rejoindre une équipe IT structurée et à contribuer concrètement à la qualité du support et à la fiabilité du parc informatique.
+<!-- HARDWARE -->
+<section id="hardware">
+  <div class="wrap" style="position:relative;z-index:1;">
+    <div class="sec-ey">Compétence principale</div>
+    <div class="sec-ti">Architecture & Maintenance Hardware</div>
+    <p class="hw-intro">
+      Dans un studio de développement, les workstations ne sont pas des PC standards. Je sais concevoir, assembler et maintenir des configurations sur-mesure selon les profils métiers, diagnostiquer les pannes hardware complexes et maximiser la disponibilité du parc.
     </p>
-    <div class="contact-links">
-      <a href="mailto:ditengs@gmail.com" class="contact-link">
-        ✉ ditengs@gmail.com
-      </a>
-      <a href="tel:+33749794448" class="contact-link">
-        📞 07 49 79 44 48
-      </a>
-      <a href="https://linkedin.com/in/gilles-ditengou" class="contact-link" target="_blank">
-        ↗ LinkedIn
-      </a>
+
+    <div class="hw-profils">
+      <div class="hw-profil">
+        <div class="hw-ph">
+          <div class="hw-ico ico-b">💻</div>
+          <div>
+            <div class="hw-pn">Profil Développeur moteur</div>
+            <div class="hw-pr">Compilation · Calcul intensif · Simulation</div>
+          </div>
+        </div>
+        <ul class="hw-ul b">
+          <li><strong>CPU</strong> AMD Threadripper / Intel Core i9 — puissance multicœurs brute</li>
+          <li><strong>RAM</strong> 64–128 Go DDR5 Quad Channel — compilations accélérées</li>
+          <li><strong>Stockage</strong> SSD NVMe PCIe Gen4 — I/O rapides sur dépôts de code</li>
+          <li><strong>Refroidissement</strong> Watercooling AIO — charge prolongée à 100%</li>
+        </ul>
+      </div>
+      <div class="hw-profil">
+        <div class="hw-ph">
+          <div class="hw-ico ico-o">🎨</div>
+          <div>
+            <div class="hw-pn">Profil Artiste / Graphiste 3D</div>
+            <div class="hw-pr">Rendu temps réel · Textures haute résolution</div>
+          </div>
+        </div>
+        <ul class="hw-ul o">
+          <li><strong>GPU</strong> Nvidia RTX 24 Go+ VRAM — rendu 3D sans compression</li>
+          <li><strong>RAM</strong> 64 Go DDR5 — assets lourds chargés en mémoire</li>
+          <li><strong>Stockage</strong> SSD NVMe PCIe Gen5 — textures 4K/8K en temps réel</li>
+          <li><strong>PSU</strong> 80+ Platinum — alimentation stable sous charge graphique</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hw-cards">
+      <div class="hw-card">
+        <div class="hw-card-ico">🔩</div>
+        <div class="hw-card-title">Assemblage & Upgrade</div>
+        <div class="hw-card-text">Montage complet, remplacement de composants, upgrade RAM / SSD / GPU. ~50 machines traitées par semaine.</div>
+      </div>
+      <div class="hw-card">
+        <div class="hw-card-ico">🌡️</div>
+        <div class="hw-card-title">Gestion thermique</div>
+        <div class="hw-card-text">Watercooling AIO, ventirads double tour, réapplication de pâte thermique. Prévention du thermal throttling.</div>
+      </div>
+      <div class="hw-card">
+        <div class="hw-card-ico">⚡</div>
+        <div class="hw-card-title">Stockage NVMe</div>
+        <div class="hw-card-text">Intégration SSD PCIe Gen4/Gen5 avec dissipateurs dédiés. Dimensionnés pour des builds de plusieurs centaines de Go.</div>
+      </div>
+      <div class="hw-card">
+        <div class="hw-card-ico">🔬</div>
+        <div class="hw-card-title">Diagnostic complexe</div>
+        <div class="hw-card-text">Codes POST BIOS/UEFI, isolation RAM via MemTest86. Résolution de BSOD et corruptions mémoire en production.</div>
+      </div>
+    </div>
+
+    <div class="hw-env">
+      <span class="hw-env-label">Outils & Composants</span>
+      <div class="hw-pills">
+        <span class="hw-pill">MemTest86</span>
+        <span class="hw-pill">HWMonitor</span>
+        <span class="hw-pill">CrystalDiskInfo</span>
+        <span class="hw-pill">Cinebench R23</span>
+        <span class="hw-pill">3DMark</span>
+        <span class="hw-pill">BIOS / UEFI</span>
+        <span class="hw-pill">AMD Threadripper</span>
+        <span class="hw-pill">Intel Core i9</span>
+        <span class="hw-pill">Nvidia RTX</span>
+        <span class="hw-pill">DDR5 Quad Ch.</span>
+        <span class="hw-pill">NVMe Gen4/Gen5</span>
+      </div>
     </div>
   </div>
 </section>
 
-<footer>
-  <p>© 2026 Gilles Ditengou · Technicien Support IT · Lormont, Gironde</p>
-</footer>
+<!-- SUPPORT -->
+<section id="support">
+  <div class="wrap">
+    <div class="sec-ey">Helpdesk & Systèmes</div>
+    <div class="sec-ti">Support & Administration</div>
+    <div class="support-grid">
+      <div class="sup-card">
+        <div class="sup-ico">🖥️</div>
+        <div class="sup-title">Support N1 / N2</div>
+        <div class="sup-text">Diagnostic et résolution de pannes sous Windows 10/11. Accueil et accompagnement de profils variés, en présentiel et à distance via TeamViewer et RDP.</div>
+      </div>
+      <div class="sup-card">
+        <div class="sup-ico">📦</div>
+        <div class="sup-title">Déploiement & Gestion de parc</div>
+        <div class="sup-text">Réception, préparation et configuration de postes, intégration réseau. Suivi d'inventaire, gestion des stocks et ticketing via GLPI.</div>
+      </div>
+      <div class="sup-card">
+        <div class="sup-ico">📋</div>
+        <div class="sup-title">Microsoft 365 & Documentation</div>
+        <div class="sup-text">Administration M365, gestion des comptes et licences. Rédaction de procédures et amélioration de la base documentaire de l'équipe support.</div>
+      </div>
+      <div class="sup-card">
+        <div class="sup-ico">🌐</div>
+        <div class="sup-title">Réseaux</div>
+        <div class="sup-text">TCP/IP, DNS, DHCP, brassage, switchs et NAS. Supervision Zabbix. Notions Cisco et Aruba. Préparation CCNA active.</div>
+      </div>
+      <div class="sup-card">
+        <div class="sup-ico">⚙️</div>
+        <div class="sup-title">Windows 11 Avancé</div>
+        <div class="sup-text">Configuration système, GPO, profils utilisateurs, mises à jour de sécurité. Analyse BSOD via Observateur d'événements et CLI Windows.</div>
+      </div>
+      <div class="sup-card">
+        <div class="sup-ico">🔧</div>
+        <div class="sup-title">Homelab & Virtualisation</div>
+        <div class="sup-text">Proxmox VE, Docker, Zabbix et GLPI en production personnelle. Labs Cisco Packet Tracer pour la préparation CCNA.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<script>
-  const items = document.querySelectorAll('.exp-item');
-  const io = new IntersectionObserver(entries => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 100);
-      }
-    });
-  }, { threshold: 0.1 });
-  items.forEach(el => io.observe(el));
-</script>
+<!-- EXPÉRIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-ey">Parcours</div>
+    <div class="sec-ti">Expériences professionnelles</div>
+    <div class="tl">
 
-</body>
-</html>
+      <div class="tl-item">
+        <div class="tl-meta">
+          <span class="tl-date">Mai 2023 — Jan 2026</span>
+          <span class="tl-co">Le DEFI · Lormont (33)</span>
+        </div>
+        <div class="tl-role">Technicien Informatique</div>
+        <ul class="tl-ul">
+          <li>Réception, contrôle et préparation d'environ 50 machines par semaine : diagnostic hardware, remplacement de composants, upgrade RAM / SSD / GPU.</li>
+          <li>Déploiement des postes : installation Windows 11, configuration logiciels métiers, intégration réseau et Active Directory.</li>
+          <li>Support N1/N2 en présentiel et à distance : gestion des incidents et accompagnement d'utilisateurs aux profils variés.</li>
+          <li>Suivi du parc et gestion des stocks via GLPI. Supervision réseau avec Zabbix. Administration Microsoft 365.</li>
+          <li>Rédaction de procédures d'intervention et amélioration de la base documentaire de l'équipe.</li>
+        </ul>
+        <div class="tl-tags">
+          <span class="tl-tag">Hardware / Composants</span>
+          <span class="tl-tag">Windows 11</span>
+          <span class="tl-tag">GLPI</span>
+          <span class="tl-tag">Microsoft 365</span>
+          <span class="tl-tag">TeamViewer · RDP</span>
+          <span class="tl-tag">Zabbix</span>
+  
