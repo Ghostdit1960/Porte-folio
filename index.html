@@ -29,8 +29,6 @@ body{
   font-family:var(--sans);font-weight:400;
   line-height:1.65;-webkit-font-smoothing:antialiased;
 }
-
-/* NAV */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
   background:rgba(250,248,245,0.93);
@@ -48,11 +46,7 @@ nav a{
   text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:color .2s;
 }
 nav a:hover{color:var(--blue);}
-
-/* WRAP */
 .wrap{max-width:1020px;margin:0 auto;padding:0 2rem;}
-
-/* HERO */
 #hero{padding:120px 0 70px;background:var(--white);border-bottom:1px solid var(--border);}
 .hero-grid{display:grid;grid-template-columns:1fr 300px;gap:4rem;align-items:center;}
 .hero-tag{
@@ -79,7 +73,6 @@ h1{
 }
 .chip.b{background:var(--blue-lt);border-color:var(--blue-md);color:var(--blue);}
 .chip.o{background:var(--orange-lt);border-color:#f0c8b0;color:var(--orange);}
-
 .hero-stats{display:flex;flex-direction:column;gap:.9rem;opacity:0;animation:up .5s ease .35s forwards;}
 .stat{
   background:var(--stone);border:1px solid var(--border);
@@ -87,13 +80,9 @@ h1{
 }
 .stat-n{font-family:var(--serif);font-size:2rem;color:var(--blue);line-height:1;}
 .stat-l{font-size:.68rem;font-weight:500;color:var(--ink-mid);margin-top:.3rem;letter-spacing:.03em;}
-
-/* SECTION */
 section{padding:5rem 0;}
 .sec-ey{font-size:.7rem;font-weight:600;color:var(--blue);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.5rem;}
 .sec-ti{font-family:var(--serif);font-size:1.9rem;color:var(--ink);font-weight:400;margin-bottom:2.5rem;}
-
-/* HARDWARE */
 #hardware{background:var(--ink);position:relative;overflow:hidden;}
 #hardware::before{
   content:'';position:absolute;inset:0;pointer-events:none;
@@ -104,36 +93,6 @@ section{padding:5rem 0;}
 #hardware .sec-ey{color:#6fa3d0;}
 #hardware .sec-ti{color:#fff;}
 .hw-intro{font-size:.91rem;color:rgba(255,255,255,.52);font-weight:300;line-height:1.85;max-width:540px;margin-bottom:3rem;}
-
-/* Profils */
-.hw-profils{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:2.5rem;}
-.hw-profil{
-  border-radius:14px;padding:1.8rem;
-  border:1px solid rgba(255,255,255,.1);
-  background:rgba(255,255,255,.04);transition:background .25s;
-}
-.hw-profil:hover{background:rgba(255,255,255,.07);}
-.hw-ph{
-  display:flex;align-items:center;gap:.8rem;
-  margin-bottom:1.2rem;padding-bottom:1rem;
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
-.hw-ico{
-  width:38px;height:38px;border-radius:9px;
-  display:flex;align-items:center;justify-content:center;font-size:1rem;
-}
-.ico-b{background:rgba(111,163,208,.18);border:1px solid rgba(111,163,208,.3);}
-.ico-o{background:rgba(196,98,45,.2);border:1px solid rgba(196,98,45,.3);}
-.hw-pn{font-size:.9rem;font-weight:600;color:#fff;}
-.hw-pr{font-size:.69rem;color:rgba(255,255,255,.38);margin-top:.1rem;}
-.hw-ul{list-style:none;display:flex;flex-direction:column;gap:.45rem;}
-.hw-ul li{font-size:.8rem;color:rgba(255,255,255,.62);font-weight:300;display:flex;gap:.55rem;line-height:1.5;}
-.hw-ul li::before{content:'';width:3px;height:3px;border-radius:50%;flex-shrink:0;margin-top:.52em;}
-.hw-ul.b li::before{background:#6fa3d0;}
-.hw-ul.o li::before{background:#e08050;}
-.hw-ul li strong{color:#fff;font-weight:600;}
-
-/* Cards */
 .hw-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem;}
 .hw-card{
   background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
@@ -143,8 +102,6 @@ section{padding:5rem 0;}
 .hw-card-ico{font-size:1.1rem;margin-bottom:.7rem;}
 .hw-card-title{font-size:.82rem;font-weight:600;color:#fff;margin-bottom:.45rem;line-height:1.3;}
 .hw-card-text{font-size:.75rem;color:rgba(255,255,255,.48);font-weight:300;line-height:1.65;}
-
-/* Env strip */
 .hw-env{
   display:flex;align-items:center;gap:1rem;flex-wrap:wrap;
   background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
@@ -156,8 +113,6 @@ section{padding:5rem 0;}
   font-size:.66rem;font-weight:500;padding:.18rem .58rem;border-radius:100px;
   background:rgba(255,255,255,.07);color:rgba(255,255,255,.52);border:1px solid rgba(255,255,255,.1);
 }
-
-/* SUPPORT */
 #support{background:var(--white);border-top:1px solid var(--border);}
 .support-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
 .sup-card{
@@ -171,8 +126,6 @@ section{padding:5rem 0;}
 }
 .sup-title{font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:.45rem;}
 .sup-text{font-size:.8rem;color:var(--ink-mid);font-weight:300;line-height:1.72;}
-
-/* TIMELINE */
 #experience{background:var(--cream);}
 .tl{position:relative;padding-left:1.5rem;}
 .tl::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:1px;background:var(--border);}
@@ -207,9 +160,6 @@ section{padding:5rem 0;}
   font-size:.67rem;font-weight:500;padding:.18rem .6rem;border-radius:100px;
   background:var(--stone);color:var(--ink-mid);border:1px solid var(--border);
 }
-
-/* FORMATION */
-#formation{background:var(--white);border-top:1px solid var(--border);}
 .fo-list{display:flex;flex-direction:column;gap:.75rem;}
 .fo-item{
   background:var(--cream);border:1px solid var(--border);border-radius:10px;
@@ -222,8 +172,6 @@ section{padding:5rem 0;}
 .fo-yr{font-size:.7rem;font-weight:600;padding:.22rem .7rem;border-radius:100px;white-space:nowrap;}
 .fo-yr.now{background:#e8f4ec;color:#2d7a4f;}
 .fo-yr.done{background:var(--blue-lt);color:var(--blue);}
-
-/* CONTACT */
 #contact{background:var(--ink);padding:5rem 0;}
 #contact .sec-ey{color:#6fa3d0;}
 #contact .sec-ti{color:#fff;}
@@ -239,15 +187,11 @@ section{padding:5rem 0;}
   padding:.7rem 1.3rem;border-radius:8px;transition:all .2s;
 }
 .ct-link:hover{border-color:#6fa3d0;color:#fff;background:rgba(111,163,208,.1);}
-
 footer{background:#141416;padding:1.4rem 2rem;display:flex;justify-content:center;}
 footer p{font-size:.7rem;color:rgba(255,255,255,.18);letter-spacing:.04em;}
-
 @keyframes up{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
-
 @media(max-width:768px){
   .hero-grid{grid-template-columns:1fr;}
-  .hw-profils{grid-template-columns:1fr;}
   .hw-cards{grid-template-columns:1fr 1fr;}
   .support-grid{grid-template-columns:1fr;}
   nav ul{display:none;}
@@ -268,22 +212,21 @@ footer p{font-size:.7rem;color:rgba(255,255,255,.18);letter-spacing:.04em;}
   </div>
 </nav>
 
-<!-- HERO -->
 <div id="hero">
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <div class="hero-tag">Candidature · Asobo Studio</div>
+        <div class="hero-tag">Disponible · Bordeaux</div>
         <h1>Technicien<br>Support IT</h1>
         <p class="hero-desc">
-          Spécialiste de la maintenance hardware et du support utilisateurs, avec 2 ans et demi d'expérience opérationnelle. Expert en architecture de postes haute performance, diagnostic de pannes complexes et upgrade de composants.
+          Technicien informatique polyvalent avec 2 ans et demi d'expérience opérationnelle en maintenance hardware, upgrade de postes et support utilisateurs. À l'aise dans les environnements exigeants, je m'adapte rapidement aux priorités et travaille efficacement sous pression.
         </p>
         <div class="hero-chips">
           <span class="chip o">Hardware / Composants</span>
-          <span class="chip o">Workstations HPC</span>
           <span class="chip o">Upgrade RAM · SSD · GPU</span>
+          <span class="chip o">Assemblage PC</span>
           <span class="chip b">Windows 11</span>
-          <span class="chip b">Support N1 / N2</span>
+          <span class="chip b">Support N1</span>
           <span class="chip b">GLPI</span>
           <span class="chip b">Microsoft 365</span>
           <span class="chip">TP TSSR en cours</span>
@@ -295,65 +238,40 @@ footer p{font-size:.7rem;color:rgba(255,255,255,.18);letter-spacing:.04em;}
           <div class="stat-l">Ans d'expérience IT</div>
         </div>
         <div class="stat">
-          <div class="stat-n">~50</div>
-          <div class="stat-l">Machines / semaine</div>
+          <div class="stat-n">⚡</div>
+          <div class="stat-l">À l'aise sous pression en environnement pro</div>
         </div>
         <div class="stat">
-          <div class="stat-n">N2</div>
-          <div class="stat-l">Niveau de support max</div>
+          <div class="stat-n">N1</div>
+          <div class="stat-l">Niveau de support</div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- HARDWARE -->
 <section id="hardware">
   <div class="wrap" style="position:relative;z-index:1;">
     <div class="sec-ey">Compétence principale</div>
     <div class="sec-ti">Architecture & Maintenance Hardware</div>
     <p class="hw-intro">
-      Dans un studio de développement, les workstations ne sont pas des PC standards. Je sais concevoir, assembler et maintenir des configurations sur-mesure selon les profils métiers, diagnostiquer les pannes hardware complexes et maximiser la disponibilité du parc.
+      Chaque utilisateur a des besoins différents. Mon rôle est d'analyser ces besoins et d'assembler ou d'upgrader les postes en conséquence — que ce soit pour booster les performances, remplacer un composant défaillant ou moderniser une machine existante.
     </p>
 
-    <div class="hw-profils">
-      <div class="hw-profil">
-        <div class="hw-ph">
-          <div class="hw-ico ico-b">💻</div>
-          <div>
-            <div class="hw-pn">Profil Développeur moteur</div>
-            <div class="hw-pr">Compilation · Calcul intensif · Simulation</div>
-          </div>
-        </div>
-        <ul class="hw-ul b">
-          <li><strong>CPU</strong> AMD Threadripper / Intel Core i9 — puissance multicœurs brute</li>
-          <li><strong>RAM</strong> 64–128 Go DDR5 Quad Channel — compilations accélérées</li>
-          <li><strong>Stockage</strong> SSD NVMe PCIe Gen4 — I/O rapides sur dépôts de code</li>
-          <li><strong>Refroidissement</strong> Watercooling AIO — charge prolongée à 100%</li>
-        </ul>
+    <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1.8rem 2rem;margin-bottom:2.5rem;">
+      <div style="font-size:.7rem;font-weight:600;color:#6fa3d0;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem;">
+        Upgrade & Assemblage sur mesure
       </div>
-      <div class="hw-profil">
-        <div class="hw-ph">
-          <div class="hw-ico ico-o">🎨</div>
-          <div>
-            <div class="hw-pn">Profil Artiste / Graphiste 3D</div>
-            <div class="hw-pr">Rendu temps réel · Textures haute résolution</div>
-          </div>
-        </div>
-        <ul class="hw-ul o">
-          <li><strong>GPU</strong> Nvidia RTX 24 Go+ VRAM — rendu 3D sans compression</li>
-          <li><strong>RAM</strong> 64 Go DDR5 — assets lourds chargés en mémoire</li>
-          <li><strong>Stockage</strong> SSD NVMe PCIe Gen5 — textures 4K/8K en temps réel</li>
-          <li><strong>PSU</strong> 80+ Platinum — alimentation stable sous charge graphique</li>
-        </ul>
-      </div>
+      <p style="font-size:.86rem;color:rgba(255,255,255,.68);font-weight:300;line-height:1.9;max-width:760px;">
+        Après analyse des usages — bureautique, calcul intensif, rendu graphique, stockage massif — je sélectionne et intègre les composants adaptés : <strong style="color:#fff;">processeur</strong>, <strong style="color:#fff;">mémoire RAM</strong>, <strong style="color:#fff;">carte graphique</strong>, <strong style="color:#fff;">SSD NVMe</strong> ou <strong style="color:#fff;">alimentation</strong>. L'objectif est toujours le même : un poste fiable, dimensionné pour l'usage réel de l'utilisateur, maintenu dans le temps.
+      </p>
     </div>
 
     <div class="hw-cards">
       <div class="hw-card">
         <div class="hw-card-ico">🔩</div>
         <div class="hw-card-title">Assemblage & Upgrade</div>
-        <div class="hw-card-text">Montage complet, remplacement de composants, upgrade RAM / SSD / GPU. ~50 machines traitées par semaine.</div>
+        <div class="hw-card-text">Montage complet et remplacement de composants (RAM, SSD, GPU). Habitué à travailler sous pression dans un environnement professionnel exigeant.</div>
       </div>
       <div class="hw-card">
         <div class="hw-card-ico">🌡️</div>
@@ -363,12 +281,12 @@ footer p{font-size:.7rem;color:rgba(255,255,255,.18);letter-spacing:.04em;}
       <div class="hw-card">
         <div class="hw-card-ico">⚡</div>
         <div class="hw-card-title">Stockage NVMe</div>
-        <div class="hw-card-text">Intégration SSD PCIe Gen4/Gen5 avec dissipateurs dédiés. Dimensionnés pour des builds de plusieurs centaines de Go.</div>
+        <div class="hw-card-text">Intégration SSD PCIe Gen4/Gen5 avec dissipateurs dédiés. Dimensionnés pour des fichiers et builds volumineux.</div>
       </div>
       <div class="hw-card">
-        <div class="hw-card-ico">🔬</div>
-        <div class="hw-card-title">Diagnostic complexe</div>
-        <div class="hw-card-text">Codes POST BIOS/UEFI, isolation RAM via MemTest86. Résolution de BSOD et corruptions mémoire en production.</div>
+        <div class="hw-card-ico">📋</div>
+        <div class="hw-card-title">Analyse & Remise en service</div>
+        <div class="hw-card-text">Identification des composants défaillants, tests de stabilité, validation avant remise en production. Traçabilité via ticketing.</div>
       </div>
     </div>
 
@@ -381,17 +299,16 @@ footer p{font-size:.7rem;color:rgba(255,255,255,.18);letter-spacing:.04em;}
         <span class="hw-pill">Cinebench R23</span>
         <span class="hw-pill">3DMark</span>
         <span class="hw-pill">BIOS / UEFI</span>
-        <span class="hw-pill">AMD Threadripper</span>
+        <span class="hw-pill">AMD Ryzen</span>
         <span class="hw-pill">Intel Core i9</span>
         <span class="hw-pill">Nvidia RTX</span>
-        <span class="hw-pill">DDR5 Quad Ch.</span>
+        <span class="hw-pill">DDR5</span>
         <span class="hw-pill">NVMe Gen4/Gen5</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SUPPORT -->
 <section id="support">
   <div class="wrap">
     <div class="sec-ey">Helpdesk & Systèmes</div>
@@ -399,7 +316,7 @@ footer p{font-size:.7rem;color:rgba(255,255,255,.18);letter-spacing:.04em;}
     <div class="support-grid">
       <div class="sup-card">
         <div class="sup-ico">🖥️</div>
-        <div class="sup-title">Support N1 / N2</div>
+        <div class="sup-title">Support N1</div>
         <div class="sup-text">Diagnostic et résolution de pannes sous Windows 10/11. Accueil et accompagnement de profils variés, en présentiel et à distance via TeamViewer et RDP.</div>
       </div>
       <div class="sup-card">
@@ -431,13 +348,11 @@ footer p{font-size:.7rem;color:rgba(255,255,255,.18);letter-spacing:.04em;}
   </div>
 </section>
 
-<!-- EXPÉRIENCE -->
 <section id="experience">
   <div class="wrap">
     <div class="sec-ey">Parcours</div>
     <div class="sec-ti">Expériences professionnelles</div>
     <div class="tl">
-
       <div class="tl-item">
         <div class="tl-meta">
           <span class="tl-date">Mai 2023 — Jan 2026</span>
@@ -445,9 +360,9 @@ footer p{font-size:.7rem;color:rgba(255,255,255,.18);letter-spacing:.04em;}
         </div>
         <div class="tl-role">Technicien Informatique</div>
         <ul class="tl-ul">
-          <li>Réception, contrôle et préparation d'environ 50 machines par semaine : diagnostic hardware, remplacement de composants, upgrade RAM / SSD / GPU.</li>
+          <li>Réception, contrôle et préparation d'un volume important de machines en flux tendu : diagnostic hardware, remplacement de composants, upgrade RAM / SSD / GPU — dans un environnement professionnel exigeant et sous pression.</li>
           <li>Déploiement des postes : installation Windows 11, configuration logiciels métiers, intégration réseau et Active Directory.</li>
-          <li>Support N1/N2 en présentiel et à distance : gestion des incidents et accompagnement d'utilisateurs aux profils variés.</li>
+          <li>Support N1 en présentiel et à distance : gestion des incidents et accompagnement d'utilisateurs aux profils variés.</li>
           <li>Suivi du parc et gestion des stocks via GLPI. Supervision réseau avec Zabbix. Administration Microsoft 365.</li>
           <li>Rédaction de procédures d'intervention et amélioration de la base documentaire de l'équipe.</li>
         </ul>
@@ -458,4 +373,59 @@ footer p{font-size:.7rem;color:rgba(255,255,255,.18);letter-spacing:.04em;}
           <span class="tl-tag">Microsoft 365</span>
           <span class="tl-tag">TeamViewer · RDP</span>
           <span class="tl-tag">Zabbix</span>
-            
+          <span class="tl-tag">Active Directory</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-meta">
+          <span class="tl-date">Juin 2021 — Sept 2024</span>
+          <span class="tl-co">BQ Conseils · Montpellier</span>
+        </div>
+        <div class="tl-role">Assistant Comptable</div>
+        <ul class="tl-ul">
+          <li>Gestion administrative rigoureuse et traitement analytique des données financières.</li>
+          <li>Utilisation quotidienne d'outils bureautiques et ERP — aisance numérique confirmée.</li>
+        </ul>
+        <div class="tl-tags">
+          <span class="tl-tag">Suite Office</span>
+          <span class="tl-tag">ERP</span>
+          <span class="tl-tag">Rigueur</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="formation" style="background:var(--white);border-top:1px solid var(--border);">
+  <div class="wrap">
+    <div class="sec-ey">Diplômes</div>
+    <div class="sec-ti">Formation</div>
+    <div class="fo-list">
+      <div class="fo-item">
+        <div>
+          <div class="fo-name">Titre Professionnel Technicien Supérieur Systèmes & Réseaux</div>
+          <div class="fo-school">Studi — Formation en ligne</div>
+        </div>
+        <span class="fo-yr now">En cours</span>
+      </div>
+      <div class="fo-item">
+        <div>
+          <div class="fo-name">BTS Comptabilité et Gestion</div>
+          <div class="fo-school">Esarc Evolution</div>
+        </div>
+        <span class="fo-yr done">2021</span>
+      </div>
+      <div class="fo-item">
+        <div>
+          <div class="fo-name">Bac Professionnel STG</div>
+          <div class="fo-school">Lycée Technique National — Gabon</div>
+        </div>
+        <span class="fo-yr done">2018</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hobby" style="background:var(--cream);border-top:1px solid var(--border);">
+  <div class="wrap">
+    <div class="sec-ey">Centres d'inté
